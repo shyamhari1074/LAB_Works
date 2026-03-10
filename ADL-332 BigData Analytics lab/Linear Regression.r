@@ -1,0 +1,5 @@
+data(iris)
+model <- lm(Petal.Length ~ Petal.Width, data = iris)
+summary(model)
+plot(iris$Petal.Width, iris$Petal.Length)
+abline(model, col="red")
