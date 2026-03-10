@@ -1,0 +1,5 @@
+data(iris)
+iris$IsSetosa <- ifelse(iris$Species=="setosa",1,0)
+model <- glm(IsSetosa ~ Petal.Length, data=iris, family=binomial)
+plot(iris$Petal.Length, iris$IsSetosa)
+curve(predict(model, data.frame(Petal.Length=x), type="response"), add=TRUE)
