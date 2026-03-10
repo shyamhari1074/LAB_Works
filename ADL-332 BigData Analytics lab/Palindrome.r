@@ -10,3 +10,11 @@ is_palindrome <- function(x) {
 is_palindrome("madam")
 is_palindrome("racecar")
 is_palindrome("hello")
+
+/// simple code 
+
+is_palindrome <- function(word) {
+  reversed <- paste(rev(strsplit(word, "")[[1]]), collapse="")
+  return(word == reversed)
+}
+is_palindrome("madam")
