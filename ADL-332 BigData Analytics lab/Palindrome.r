@@ -18,3 +18,20 @@ is_palindrome <- function(word) {
   return(word == reversed)
 }
 is_palindrome("madam")
+
+
+//// 
+word <- readline("Enter a word: ")
+flag <- TRUE
+n <- nchar(word)
+for (i in 1:(n/2)) {
+  if (substr(word, i, i) != substr(word, n - i + 1, n - i + 1)) {
+    flag <- FALSE
+    break
+  }
+}
+if (flag) {
+  print("Word Palindrome")
+} else {
+  print("Not a palindrome")
+}
