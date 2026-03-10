@@ -1,0 +1,5 @@
+x <- c(2,4,6,8,10)
+y <- c(1,3,5,7,9)
+cat("Varinace= ",var(x))
+cat("Covariance = ", cov(x, y))
+cat("Correlation =" ,cor(x, y))
