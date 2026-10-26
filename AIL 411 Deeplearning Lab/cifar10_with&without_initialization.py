@@ -42,7 +42,7 @@ for name, init, dropout, reg, reg_label in experiments:
        
 
         loss, acc = model.evaluate(x_test, y_test, verbose=0)
-        results.append([name, opt, reg_label, loss, acc * 100, train_time])
+        results.append([name, opt, reg_label, loss, acc * 100])
 
 results_df = pd.DataFrame(results, columns=[
     "Model", "Optimizer", "Regularization",
