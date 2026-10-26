@@ -40,7 +40,7 @@ for number, extra_conv in [(1, False), (2, True)]:
 
     plt.figure(figsize=(8, 4))
     for i in range(2):
-        one_hot = "[" + ",".join(map(str, y_test[i].astype(int))) + "]"
+        one_hot = str(ytest[i].astype(int).tolist())
         plt.subplot(1, 2, i + 1)
         plt.imshow(x_test[i].reshape(28, 28), cmap="gray")
         plt.title(f"Predicted: {pred[i].argmax()}\n"
