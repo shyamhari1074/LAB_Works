@@ -40,7 +40,7 @@ for number, extra_conv in [(1, False), (2, True)]:
 
     plt.figure(figsize=(12,6))
     for i in range(2):
-        .
+        
         one_hot=str(ytest[i].astype(int).tolist())
         plt.subplot(1,2,i+1)
         plt.imshow(xtest[i],cmap='gray')
