@@ -1,4 +1,4 @@
-import time
+
 import pandas as pd
 from tensorflow.keras.datasets import cifar10
 from tensorflow.keras.models import Sequential
@@ -46,7 +46,7 @@ for name, init, dropout, reg, reg_label in experiments:
 
 results_df = pd.DataFrame(results, columns=[
     "Model", "Optimizer", "Regularization",
-    "Test Loss", "Test Accuracy (%)", "Training Time (seconds)"
+    "Test Loss", "Test Accuracy (%)"
 ])
 
 print("\n" + "=" * 100)
