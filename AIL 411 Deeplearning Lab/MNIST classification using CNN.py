@@ -46,7 +46,7 @@ for i in range(2):
     plt.title(f"Predictecd:{pred[i].argmax()}\n"
              f"Actual :{ytest[i].argmax()}\n"
              f"One hot:{one_hot}")
-        plt.axis("off")
+    plt.axis("off")
 
     plt.suptitle(f"Model {number} Predictions")
     plt.tight_layout()
