@@ -36,10 +36,10 @@ for name, init, dropout, reg, reg_label in experiments:
         model = build_model(init, dropout, reg)
         model.compile(optimizer=opt.lower(), loss="categorical_crossentropy", metrics=["accuracy"])
 
-        start = time.time()
+        
         model.fit(x_train, y_train, epochs=5, batch_size=64,
                   validation_data=(x_test, y_test))
-        train_time = time.time() - start
+       
 
         loss, acc = model.evaluate(x_test, y_test, verbose=0)
         results.append([name, opt, reg_label, loss, acc * 100, train_time])
