@@ -49,6 +49,5 @@ for number, extra_conv in [(1, False), (2, True)]:
              f"One hot:{one_hot}")
         plt.axis("off")
 
-        plt.suptitle(f"Model {number} Predictions")
-        plt.tight_layout()
-        plt.show()
+       
+     plt.show()
