@@ -38,14 +38,14 @@ for number, extra_conv in [(1, False), (2, True)]:
     print("Accuracy:", accuracy * 100, "%")
     print("Loss:", loss)
 
-    plt.figure(figsize=(8, 4))
-    for i in range(2):
-        one_hot = str(ytest[i].astype(int).tolist())
-        plt.subplot(1, 2, i + 1)
-        plt.imshow(x_test[i].reshape(28, 28), cmap="gray")
-        plt.title(f"Predicted: {pred[i].argmax()}\n"
-                  f"Actual: {y_test[i].argmax()}\n"
-                  f"One-Hot: {one_hot}")
+    plt.figure(figsize=(12,6))
+for i in range(2):
+    one_hot=str(ytest[i].astype(int).tolist())
+    plt.subplot(1,2,i+1)
+    plt.imshow(xtest[i],cmap='gray')
+    plt.title(f"Predictecd:{pred[i].argmax()}\n"
+             f"Actual :{ytest[i].argmax()}\n"
+             f"One hot:{one_hot}")
         plt.axis("off")
 
     plt.suptitle(f"Model {number} Predictions")
