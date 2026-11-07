@@ -60,6 +60,44 @@ for row, (name, result) in enumerate(results.items()):
         ax.set_title(f"{name} - {metric}")
         ax.legend()
         ax.grid()
+#Or we could use below lines for plotting also
+# Fixed Feature Extraction
+h1 = results["Fixed Feature Extraction"][3]
 
+plt.figure(figsize=(14, 10))
+
+plt.subplot(2, 2, 1)
+plt.plot(h1["accuracy"], label="Training Accuracy")
+plt.plot(h1["val_accuracy"], label="Validation Accuracy")
+plt.title("Feature Extraction - Accuracy")
+plt.legend()
+plt.grid()
+
+plt.subplot(2, 2, 2)
+plt.plot(h1["loss"], label="Training Loss")
+plt.plot(h1["val_loss"], label="Validation Loss")
+plt.title("Feature Extraction - Loss")
+plt.legend()
+plt.grid()
+
+# Fine-Tuning
+h2 = results["Fine-Tuning"][3]
+
+plt.subplot(2, 2, 3)
+plt.plot(h2["accuracy"], label="Training Accuracy")
+plt.plot(h2["val_accuracy"], label="Validation Accuracy")
+plt.title("Fine-Tuning - Accuracy")
+plt.legend()
+plt.grid()
+
+plt.subplot(2, 2, 4)
+plt.plot(h2["loss"], label="Training Loss")
+plt.plot(h2["val_loss"], label="Validation Loss")
+plt.title("Fine-Tuning - Loss")
+plt.legend()
+plt.grid()
+
+plt.tight_layout()
+plt.show()
 plt.tight_layout()
 plt.show()
