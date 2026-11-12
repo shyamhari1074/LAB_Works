@@ -10,8 +10,8 @@ from tensorflow.keras.layers import LSTM, Dense, Dropout
 
 # ---------- 1. Load CSV ----------
 data = pd.read_csv("nifty50.csv", skiprows=3, header=None,
-                   names=["Date", "Adj Close", "Close", "High",
-                          "Low", "Open", "Volume"])
+                   names=["Date", "x", "Close", "x1",
+                          "x2", "x3", "x4"])
 
 data["Date"] = pd.to_datetime(data["Date"])
 data["Close"] = pd.to_numeric(data["Close"], errors="coerce")
