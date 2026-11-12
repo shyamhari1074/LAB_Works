@@ -10,18 +10,10 @@ from tensorflow.keras.layers import LSTM, Dense, Dropout
 
 # ---------- 1. Load CSV ----------
 data = pd.read_csv("nifty50.csv", skiprows=3, header=None,
-                   names=["Date", "x", "Close", "x1",
-                          "x2", "x3", "x4"])
+                   usecols=[0, 2], names=["Date", "Close"])
 
-data["Date"] = pd.to_datetime(data["Date"])
-data["Close"] = pd.to_numeric(data["Close"], errors="coerce")
-data = data.dropna(subset=["Close"]).sort_values("Date")
-
-dates = data["Date"]
+dates = pd.to_datetime(data["Date"])
 prices = data["Close"].values.reshape(-1, 1)
-
-print("Total records:", len(prices))
-
 # ---------- 2. Normalize ----------
 scaler = MinMaxScaler()
 scaled_data = scaler.fit_transform(prices)
