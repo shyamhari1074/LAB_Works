@@ -29,19 +29,11 @@ for i in range(sequence_length, len(scaled_data)):
 
 X = np.array(X).reshape(-1, sequence_length, 1)
 y = np.array(y)
-
-print("X shape:", X.shape)
-print("y shape:", y.shape)
-
 # ---------- 4. Train / Test Split ----------
 train_size = int(len(X) * 0.80)
 
 X_train, X_test = X[:train_size], X[train_size:]
 y_train, y_test = y[:train_size], y[train_size:]
-
-print("Training samples:", len(X_train))
-print("Testing samples:", len(X_test))
-
 # ---------- 5. Build and Train LSTM ----------
 model = Sequential([
     LSTM(64, return_sequences=True, input_shape=(60, 1)),
