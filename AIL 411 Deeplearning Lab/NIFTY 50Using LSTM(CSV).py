@@ -76,18 +76,8 @@ plt.figure(figsize=(16, 8))
 plt.plot(dates, prices.flatten(), label="All Data", alpha=0.45)
 plt.plot(test_dates, actual, "--", label="True Values")
 plt.plot(test_dates, prediction, "--", label="Predicted Values")
-
-plt.axvline(test_dates.iloc[0], linestyle="--",
-            linewidth=2, label="Train / Test Split")
-
 plt.title("NIFTY 50 LSTM Prediction")
 plt.xlabel("Date")
 plt.ylabel("NIFTY 50 Close Price")
 
-plt.text(0.02, 0.94, f"MAE: {mae:.2f}",
-         transform=plt.gca().transAxes)
-
-plt.grid(alpha=0.3)
-plt.legend(loc="lower right")
-plt.tight_layout()
 plt.show()
